@@ -2,7 +2,6 @@
     height: 40px;
     border: 1px solid gray;
     display: flex;
-    /* flex-direction: row; */
     justify-content: space-around;
     align-items: center;
 }
@@ -18,4 +17,25 @@ td {
     /* padding: 10px; */
     border-collapse: collapse;
     width: 100%;
+}
+
+.pop-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 300px;
+    gap: 30px;
+    border: 1px solid gray;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.mid-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }

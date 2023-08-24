@@ -66,17 +66,10 @@ function Table() {
         <>
             <div className='input-data'>
 
-                {popUp ? (<div>
-                    <input type="text" value={inpuData || ""} placeholder='Enter name' autoComplete='off' name='name' onChange={nameChange} />
-                    <input type="number" value={house || ""} placeholder='Enter house number' name='number' onChange={houseChange} />
-                    <input type="number" value={number || ""} placeholder='Enter number' name='number' onChange={numberChange} />
-                    <button onClick={Data}>Submit</button>
-                </div>) : null
 
-                }
-
+                <h1>user managment</h1>
                 <button onClick={() => (setPopUp(true))} >Add Data</button>
-                {/* <button onClick={() => (setPopUp(false))}>Hide</button> */}
+
             </div>
 
 
@@ -91,6 +84,7 @@ function Table() {
                     </tr>
 
 
+
                     {
                         array?.map((item, i) => (
                             <tr key={i}>
@@ -101,9 +95,19 @@ function Table() {
                                 <th><button onClick={() => deleteData(i)}>Delete</button></th>
                             </tr>
                         ))}
-                </tbody>
+                </tbody>    
             </table >
 
+            {popUp ? (<div className='mid-popup'>
+                <div className='pop-up'>
+                    <input type="text" value={inpuData || ""} placeholder='Enter name' autoComplete='off' name='name' onChange={nameChange} />
+                    <input type="number" value={house || ""} placeholder='Enter house number' name='number' onChange={houseChange} />
+                    <input type="number" value={number || ""} placeholder='Enter number' name='number' onChange={numberChange} />
+                    <button onClick={Data}>Submit</button>
+                </div>
+            </div>) : null
+
+            }
 
 
 
