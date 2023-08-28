@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import "../Table-style/Table.css"
-function Table() {
+import { Button, Dialog, DialogActions, DialogTitle, IconButton, TextField } from '@mui/material'
+import DeleteIcon from '@mui/icons-material/Delete';
+import UpdateIcon from '@mui/icons-material/Update';
 
+function Table() {
 
     const [array, setArray] = useState([])
 
@@ -24,6 +27,7 @@ function Table() {
 
 
     function Data() {
+
         const userData = {
             name: inpuData,
             House: house,
@@ -34,48 +38,48 @@ function Table() {
         setHouse("")
         setNumber("")
         setPopUp(false)
+        handleClose()
     }
 
 
 
     function deleteData(i) {
-        let total = [array]
+        let total = [...array]
         total.splice(i, 1)
         setArray(total)
     }
 
-    function updateData(i) {
-        console.log(array[i], "hwllo");
-        let editData = array[i]
+    const [show, setShow] = useState(false)
 
-        setInputData(editData.name)
-        setHouse(editData.number)
-        setNumber(editData.number)
-
-        const userEditData = {
-            name: inpuData,
-            house: house,
-            number: number
-        }
-
-        array[i] = userEditData
-
+    const handleClose = () => {
+        setShow(false)
     }
 
     return (
         <>
+
+            <button onClick={() => { setShow(true) }}>Dialog</button>
             <div className='input-data'>
 
+                {popUp ? (<div className='mid-popup'>
 
-                <h1>user managment</h1>
-                <button onClick={() => (setPopUp(true))} >Add Data</button>
+                </div>) : null
 
+                }
+
+                <h1>User Managment</h1>
+                <TextField size='small' id="outlined-basic" label="Search" variant="outlined" />
+
+                <Button sx={{
+
+                    background: 'blue'
+                }} variant="contained" onClick={() => (setPopUp(true))}>Add Data</Button>
             </div>
 
 
             <table border={1}>
                 <tbody>
-                    <tr>
+                    <tr style={{ background: 'blue', color: 'white', height: '30px', fontSize: '17px' }}>
                         <th>Name</th>
                         <th>House</th>
                         <th>Number</th>
@@ -83,35 +87,38 @@ function Table() {
                         <th>Delete</th>
                     </tr>
 
-
-
                     {
                         array?.map((item, i) => (
                             <tr key={i}>
                                 <th>{item.name}</th>
+                                <th>{item.house}</th>
                                 <th>{item.number}</th>
-                                <th>{item.number}</th>
-                                <th><button onClick={() => updateData(i)}>update</button></th>
-                                <th><button onClick={() => deleteData(i)}>Delete</button></th>
+                                <th><UpdateIcon /></th>
+                                <th><IconButton onClick={() => deleteData(i)} aria-label="delete" size="large">
+                                    <DeleteIcon />
+                                </IconButton>
+                                </th>
                             </tr>
                         ))}
-                </tbody>    
+                </tbody>
             </table >
 
-            {popUp ? (<div className='mid-popup'>
+            <Dialog onClose={handleClose} open={show}>
+                <DialogTitle>Set backup account</DialogTitle>
                 <div className='pop-up'>
                     <input type="text" value={inpuData || ""} placeholder='Enter name' autoComplete='off' name='name' onChange={nameChange} />
-                    <input type="number" value={house || ""} placeholder='Enter house number' name='number' onChange={houseChange} />
+                    <input type="text" value={house || ""} placeholder='Enter house number' name='number' onChange={houseChange} />
                     <input type="number" value={number || ""} placeholder='Enter number' name='number' onChange={numberChange} />
-                    <button onClick={Data}>Submit</button>
+                    <Button onClick={Data} variant="contained" color="success">
+                        Submit
+                    </Button>
                 </div>
-            </div>) : null
-
-            }
 
 
-
+            </Dialog>
         </>
+
+
 
     )
 }

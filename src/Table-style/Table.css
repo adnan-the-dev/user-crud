@@ -3,6 +3,8 @@
     border: 1px solid gray;
     display: flex;
     justify-content: space-around;
+
+    position: relative;
     align-items: center;
 }
 
@@ -14,7 +16,6 @@ table,
 tr,
 td {
     border: 1px solid black;
-    /* padding: 10px; */
     border-collapse: collapse;
     width: 100%;
 }
@@ -30,12 +31,13 @@ td {
     border: 1px solid gray;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
 }
 
 .mid-popup {
+    position: absolute;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
 }
