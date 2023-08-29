@@ -50,6 +50,7 @@ function Table() {
     }
 
     const [show, setShow] = useState(false)
+
     console.log(show);
 
     const handleClose = () => {
