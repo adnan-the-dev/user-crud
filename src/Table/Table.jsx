@@ -23,7 +23,7 @@ function Table() {
         setNumber(e.target.value)
     }
 
-    const [popUp, setPopUp] = useState(false)
+    // const [popUp, setPopUp] = useState(false)
 
 
     function Data() {
@@ -37,7 +37,7 @@ function Table() {
         setInputData("")
         setHouse("")
         setNumber("")
-        setPopUp(false)
+        // setPopUp(false)
         handleClose()
     }
 
@@ -60,14 +60,14 @@ function Table() {
     return (
         <>
 
-            <button onClick={() => { setShow(true) }}>Dialog</button>
+            {/* <button onClick={() => { setShow(true) }}>Dialog</button> */}
             <div className='input-data'>
 
-                {popUp ? (<div className='mid-popup'>
+                {/* {popUp ? (<div className='mid-popup'>
 
                 </div>) : null
 
-                }
+                } */}
 
                 <h1>User Managment</h1>
                 <TextField size='small' id="outlined-basic" label="Search" variant="outlined" />
@@ -75,7 +75,7 @@ function Table() {
                 <Button sx={{
 
                     background: 'blue'
-                }} variant="contained" onClick={() => (setPopUp(true))}>Add Data</Button>
+                }} variant="contained" onClick={() => (setShow(true))}>Add Data</Button>
             </div>
 
 
@@ -95,7 +95,7 @@ function Table() {
                                 <th>{item.name}</th>
                                 <th>{item.house}</th>
                                 <th>{item.number}</th>
-                                <th><UpdateIcon /></th>
+                                <th></th>
                                 <th><IconButton onClick={() => deleteData(i)} aria-label="delete" size="large">
                                     <DeleteIcon />
                                 </IconButton>
@@ -106,7 +106,6 @@ function Table() {
             </table >
 
             <Dialog onClose={handleClose} open={show}>
-                <DialogTitle>Set backup account</DialogTitle>
                 <div className='pop-up'>
                     <input type="text" value={inpuData || ""} placeholder='Enter name' autoComplete='off' name='name' onChange={nameChange} />
                     <input type="text" value={house || ""} placeholder='Enter house number' name='number' onChange={houseChange} />

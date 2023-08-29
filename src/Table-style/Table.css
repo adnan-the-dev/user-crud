@@ -3,7 +3,6 @@
     border: 1px solid gray;
     display: flex;
     justify-content: space-around;
-
     position: relative;
     align-items: center;
 }
@@ -29,15 +28,9 @@ td {
     width: 300px;
     gap: 30px;
     border: 1px solid gray;
-    border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.mid-popup {
-    position: absolute;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 100vh; */
+.pop-up input {
+    padding: 6px;
 }
