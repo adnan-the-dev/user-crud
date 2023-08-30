@@ -17,6 +17,7 @@ function Table() {
     const houseChange = (e) => {
         setHouse(e.target.value)
     }
+    // console.log(house, "hello");
 
     const [number, setNumber] = useState("")
     const numberChange = (e) => {
@@ -37,8 +38,8 @@ function Table() {
         setInputData("")
         setHouse("")
         setNumber("")
-        // setPopUp(false)
         handleClose()
+        // setPopUp(false)
     }
 
 
@@ -51,7 +52,7 @@ function Table() {
 
     const [show, setShow] = useState(false)
 
-    console.log(show);
+    // console.log(show);
 
     const handleClose = () => {
         setShow(false)
@@ -95,7 +96,7 @@ function Table() {
                                 <th>{item.name}</th>
                                 <th>{item.house}</th>
                                 <th>{item.number}</th>
-                                <th></th>
+                                <th><UpdateIcon /></th>
                                 <th><IconButton onClick={() => deleteData(i)} aria-label="delete" size="large">
                                     <DeleteIcon />
                                 </IconButton>
