@@ -60,16 +60,19 @@ function Graph() {
     const TopSellingItem = [
         {
             img: "https://cdn.eateasily.com/restaurants/profile/app/400X300/16424.jpg",
+            img1: "https://images.deliveryhero.io/image/fd-pk/LH/u4bl-hero.jpg",
             name: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             price: "15487",
         },
         {
             img: "https://images.deliveryhero.io/image/fd-pk/Products/6097580.jpg?width=%s",
+            img1: "https://images.deliveryhero.io/image/fd-pk/Products/25349319.jpg?width=%s",
             name: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             price: "15487",
         },
         {
             img: "https://images.deliveryhero.io/image/talabat/Menuitems/mmw_638123115351830900?width=172&amp;height=172",
+            img1: "https://images.deliveryhero.io/image/fd-pk/Products/1965254.jpg?width=%s",
             name: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             price: "15487",
         },
@@ -336,7 +339,7 @@ function Graph() {
                                             <Avatar
                                                 sx={{ width: 80, height: 80 }}
                                                 alt="Remy Sharp"
-                                                src={item.img}
+                                                src={item.img1}
                                             />
                                         </ListItemAvatar>
                                         <Typography>
