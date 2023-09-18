@@ -96,7 +96,7 @@ function Graph() {
             </HeaderBox>
 
             {/* *********************Create Box*************************** */}
-            <ParentGrid container>
+            {/* <ParentGrid container>
                 <ChildGrid item xl={3} lg={3} md={6} sm={12} xs={12}>
                     <SaleBox>
                         <Box
@@ -168,10 +168,10 @@ function Graph() {
                         </Box>
                     </SaleBox>
                 </ChildGrid>
-            </ParentGrid>
+            </ParentGrid> */}
             {/* ********************************Graph Box************************** */}
 
-            <BoxesGrid container>
+            {/* <BoxesGrid container>
                 <BoxGrid item xl={8} lg={8} md={6} sm={12} xs={12}>
                     <Box
                         sx={{
@@ -213,7 +213,7 @@ function Graph() {
                 <BoxGrid item xl={4} lg={4} md={6} sm={12} xs={12}>
                     <h2>hello</h2>
                 </BoxGrid>
-            </BoxesGrid>
+            </BoxesGrid> */}
 
 
 
@@ -229,7 +229,7 @@ function Graph() {
 
 
 
-            {/* ********************Top selling********************* */}
+            {/* ********************Top selling Box********************* */}
             <GridContainer container>
                 <GridSeling item xl={6} lg={6} md={6} sm={12} xs={12}>
                     <SellingGridBox>
@@ -296,7 +296,7 @@ function Graph() {
                     </SellingGridBox >
                     {/* <Divider sx={{border:"1px solid black"}}/> */}
                 </GridSeling>
-                {/* ****************************Second Box********************* */}
+                {/* ****************************Top Grossing Box********************* */}
                 <GridSeling item xl={4} lg={6} md={6} sm={12} xs={12}>
                     <SellingGridBox>
                         <Box>

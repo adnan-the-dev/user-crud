@@ -7,8 +7,7 @@ function App() {
   console.log("any");
   return (
     <>
-      {/* <Tabl<input type="text" onChange={number1} value={numbers} />
-            <input type="text" onChange={number1} value={numbers} />e /> */}
+      {/* <Table /> */}
       <Graph />
     </>
   );

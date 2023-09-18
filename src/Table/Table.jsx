@@ -17,7 +17,6 @@ function Table() {
     const houseChange = (e) => {
         setHouse(e.target.value)
     }
-    // console.log(house, "hello");
 
     const [number, setNumber] = useState("")
     const numberChange = (e) => {
@@ -57,7 +56,6 @@ function Table() {
 
     const [show, setShow] = useState(false)
 
-    // console.log(show);
 
     const handleClose = () => {
         setShow(false)
@@ -66,7 +64,6 @@ function Table() {
     return (
         <>
 
-            {/* <button onClick={() => { setShow(true) }}>Dialog</button> */}
             <div className='input-data'>
 
                 {/* {popUp ? (<div className='mid-popup'>
