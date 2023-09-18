@@ -24,6 +24,11 @@ function Table() {
         setNumber(e.target.value)
     }
 
+    // const [numbers, setNumbers] = useState('')
+    // const number1 = (e) => {
+    //     setNumbers(e.target.value)
+    // }
+    // console.log(numbers, "hello");
     // const [popUp, setPopUp] = useState(false)
 
 
@@ -31,7 +36,7 @@ function Table() {
 
         const userData = {
             name: inpuData,
-            House: house,
+            house: house,
             number: number
         }
         setArray([...array, userData])
@@ -118,6 +123,13 @@ function Table() {
 
 
             </Dialog>
+
+
+
+
+
+            {/* <input type="text" onChange={number1} value={numbers} />
+            <input type="text" onChange={number1} value={numbers} /> */}
         </>
 
 
