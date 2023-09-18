@@ -6,8 +6,8 @@ import Chart from './chart/Chart';
 function App() {
   return (
     <>
-      <Table />
-      {/* <Graph /> */}
+      {/* <Table /> */}
+      <Graph />
     </>
   );
 }
