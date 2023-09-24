@@ -27,7 +27,7 @@ td {
     height: 300px;
     width: 300px;
     gap: 30px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
