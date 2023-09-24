@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import "../Table-style/Table.css"
-import { Button, Dialog, DialogActions, DialogTitle, IconButton, TextField } from '@mui/material'
+import { Button, Dialog, IconButton, TextField } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
 import UpdateIcon from '@mui/icons-material/Update';
+import AddIcon from '@mui/icons-material/Add';
 
 function Table() {
 
@@ -23,12 +24,21 @@ function Table() {
         setNumber(e.target.value)
     }
 
-    // const [numbers, setNumbers] = useState('')
-    // const number1 = (e) => {
-    //     setNumbers(e.target.value)
-    // }
-    // console.log(numbers, "hello");
-    // const [popUp, setPopUp] = useState(false)
+    // searchQuery section
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const handleSearchChange = (event) => {
+        setSearchQuery(event.target.value);
+    };
+    const filteredArray = array?.filter((array) =>
+        searchQuery
+            .toLowerCase()
+            .split(' ')
+            .every((term) => {
+                return array?.name?.toLowerCase().includes(term);
+            })
+    );
+
 
 
     function Data() {
@@ -43,7 +53,6 @@ function Table() {
         setHouse("")
         setNumber("")
         handleClose()
-        // setPopUp(false)
     }
 
 
@@ -66,19 +75,21 @@ function Table() {
 
             <div className='input-data'>
 
-                {/* {popUp ? (<div className='mid-popup'>
-
-                </div>) : null
-
-                } */}
-
                 <h1>User Managment</h1>
-                <TextField size='small' id="outlined-basic" label="Search" variant="outlined" />
-
+                <TextField
+                    label="Search "
+                    variant="outlined"
+                    size="small"
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                />
                 <Button sx={{
 
                     background: 'blue'
-                }} variant="contained" onClick={() => (setShow(true))}>Add Data</Button>
+                }} variant="contained" startIcon={<AddIcon />} onClick={() => (setShow(true))}>Add Data</Button>
+                {/* <Button variant="outlined" startIcon={<DeleteIcon />}>
+                    Delete
+                </Button> */}
             </div>
 
 
@@ -93,14 +104,14 @@ function Table() {
                     </tr>
 
                     {
-                        array?.map((item, i) => (
+                        filteredArray?.map((item, i) => (
                             <tr key={i}>
                                 <th>{item.name}</th>
                                 <th>{item.house}</th>
                                 <th>{item.number}</th>
                                 <th><UpdateIcon /></th>
-                                <th><IconButton onClick={() => deleteData(i)} aria-label="delete" size="large">
-                                    <DeleteIcon />
+                                <th><IconButton onClick={() => deleteData(i)} aria-label="delete" size="small">
+                                    <DeleteIcon size="small" />
                                 </IconButton>
                                 </th>
                             </tr>
@@ -118,19 +129,8 @@ function Table() {
                     </Button>
                 </div>
 
-
             </Dialog>
-
-
-
-
-
-            {/* <input type="text" onChange={number1} value={numbers} />
-            <input type="text" onChange={number1} value={numbers} /> */}
         </>
-
-
-
     )
 }
 
